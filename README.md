@@ -54,8 +54,7 @@ This project aims to build a complete backend system for managing a **food produ
 
 ```bash
 ecommerce_backend/
-├── project/              # App for managing products
+├── project/              # Django project configuration
 ├── shop/                 # App for managing products
-├── project/               # Django project configuration
-├── requirements.txt       # Python dependencies
-├── README.md              # Project documentation
+├── requirements.txt      # Python dependencies
+├── README.md             # Project documentation
