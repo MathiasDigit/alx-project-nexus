@@ -27,21 +27,22 @@ class ProductDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'date_created', 'date_updated', 'name', 'category', 'articles']
+        fields = ['id', 'date_created', 'date_updated', 'name', 'category', 'ecoscore','articles']
 
     def get_articles(self, instance):
             queryset = instance.articles.filter(active=True)
-            serializers = ArticleSerializer(queryset, many=True)
+            serializer = ArticleSerializer(queryset, many=True)
+            return serializer.data
 
 class ProductListSerializer(serializers.ModelSerializer):
      class Meta:
           model = Product
-          fields = ['id', 'date_created', 'date_updated', 'name', 'category', 'ecoscore']
+          fields = ['id', 'name', 'category', 'ecoscore']
 
 class CategoryListSerializer(serializers.ModelSerializer):
      class Meta:
           model = Category
-          fields = ['id', 'date_created', 'date_updated', 'name', 'description']
+          fields = ['id', 'name', 'description']
 
      def validate_name(self, value):
          # Nous verifions que la categories existe
