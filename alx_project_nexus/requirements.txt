@@ -22,12 +22,12 @@ inflection==0.5.1
 ipython_pygments_lexers==1.1.1
 jedi==0.19.2
 matplotlib-inline==0.1.7
-mysql-connector-python==8.0.28
+mysql-connector-python==9.1.0
 packaging==25.0
 parso==0.8.4
 promise==2.3
 prompt_toolkit==3.0.51
-protobuf==6.31.0
+protobuf==6.31.1
 psycopg2==2.9.10
 psycopg2-binary==2.9.10
 pure_eval==0.2.3
