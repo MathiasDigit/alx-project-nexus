@@ -2,10 +2,11 @@ from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
 
-from .models import Category, Product, Article
+from .models import Category, Product, Article, CustomUser
 from .permissions import IsAdminAuthenticated, IsStaffAuthenticated
-from .serializers import CategoryDetailSerializer, CategoryListSerializer, ProductDetailSerializer, ProductListSerializer, ArticleSerializer
+from .serializers import CategoryDetailSerializer, CategoryListSerializer, ProductDetailSerializer, ProductListSerializer, ArticleSerializer, RegisterSerializer
 
 class MultipleSerializerMixin:
 
@@ -16,6 +17,9 @@ class MultipleSerializerMixin:
             return self.detail_serializer_class
         return super().get_serializer_class()
     
+class RegisterView(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = RegisterSerializer    
     
 class AdminCategoryViewset(MultipleSerializerMixin, ModelViewSet):
 
