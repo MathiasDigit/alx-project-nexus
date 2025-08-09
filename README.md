@@ -53,7 +53,7 @@ This project aims to build a complete backend system for managing a **food produ
 ## 📂 Project Structure
 
 ```bash
-ecommerce_backend/
+alx_project_nexus/
 ├── project/              # Django project configuration
 ├── shop/                 # App for managing products
 ├── requirements.txt      # Python dependencies
