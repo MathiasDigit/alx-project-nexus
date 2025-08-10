@@ -30,5 +30,4 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Article, ArticleAdmin)
 CustomUser._meta.app_label = 'auth'
