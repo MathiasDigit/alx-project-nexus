@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-8%!d1x5j3$ouyqb54a!sry!r8(*eqtwr!oi2$l(-!77(_$5fq#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "alx-project-nexus-1-paln.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
 
 AUTH_USER_MODEL = 'shop.CustomUser'
 # Application definition
