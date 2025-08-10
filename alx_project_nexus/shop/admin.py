@@ -1,6 +1,12 @@
 from django.contrib import admin
-from shop.models import Category, Product, Article
+from shop.models import Category, Product, Article, CustomUser
 
+
+@admin.register(CustomUser)
+class CustomUserAdmin(admin.ModelAdmin):
+    list_display = ('email', 'username', 'role', 'is_active', 'is_staff')
+    search_fields = ('email', 'username')
+    list_filter = ('role', 'is_active', 'is_staff')
 
 class CategoryAdmin(admin.ModelAdmin):
 
@@ -24,3 +30,5 @@ class ArticleAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Article, ArticleAdmin)
+CustomUser._meta.app_label = 'auth'
